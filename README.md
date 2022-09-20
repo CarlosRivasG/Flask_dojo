@@ -1,7 +1,5 @@
-Objetivos del proyecto:
-**Practicar la conexión de Flask a la base de datos**
-**Practicar relaciones de uno a muchos**
-**Practicar la visualización y la creación de datos desde/hacia la base de datos**
+Objetivos del proyecto
+Practicar la conexión de Flask a la base de datos, practicar relaciones de uno a muchos, practicar la visualización y la creación de datos desde/hacia la base de datos
 ---------------------------------------------------------------------------
 
 Crea un nuevo proyecto Flask
