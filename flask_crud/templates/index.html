@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet" >
+    <title></title>
+</head>
+<body>
+    <h1 class="text-center">New Dojo</h1>
+    <div class="d-flex flex-wrap justify-content-around">
+        <form action="/dojos" method="post" class="col-6 p-3  text-black">
+            
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" name="name" class="form-control">
+            </div>
+            <hr>
+            <input type="submit" value="Add Dojo" class="btn btn-success">
+
+            <div class="p-2 flex-fill">
+                <h1>All Dojos</h1>
+                <div class="card text-bg-light mb-3" style="max-width: 450rem;">
+                    {% for dojo in all_dojos %}
+                    <div class="card-body">
+                        <p>Dojo: <a href="/dojos/{{dojo.id}}">{{dojo.name}}</a><a class="btn btn-outline-danger btn-sm" href="/dojos/eliminar/{{dojo.id}}">Delete</a></p>
+                    </div>
+                    {% endfor %}
+                </div>
+                <a href="/ninjas" class="col-6 p-3" > Add Ninjas</a>
+            </div>
+    </div>
+    </form>
+
+    
+    </div>
+
+       
+            
+        <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
+        </body>
+        </html>

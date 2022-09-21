@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet" >
+    <link href="{{url_for('static', filename='css/font-awesome.min.css')}}" rel="stylesheet">
+
+
+    <title></title>
+</head>
+<body>
+    
+    <h1>Detalle del dojo: {{dojo.name}}</h1>
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">#id</th>
+            <th scope="col">First name</th>
+            <th scope="col">Last name</th>
+            <th scope="col">Age</th>
+            <th scope="col">Dojo id</th>
+            <th scope="col">created at</th>
+            <th scope="col">updated at</th>
+        </tr>
+        </thead>
+        
+        <tbody class="table-group-divider">
+            {% for ninja in dojo.ninjas %}
+        <tr>
+            <th > {{ninja['id']}}</th>
+            <td>{{ninja['first_name']}}</td>
+            <td>{{ninja['last_name']}}</td>
+            <td>{{ninja['age']}}</td>
+            <td>{{ninja['dojos_id']}}</td>
+            <td>{{ninja['created_at']}}</td>
+            <td>{{ninja['updated_at']}}</td>
+        </tr>
+        {% endfor %}
+
+        </tbody>
+    </table>
+    <div class="p-2 flex-fill">
+        <a href="/dojos"> Volver a la pagina principal </a>
+    </div>
+
+
+
+
+    
+    
+<script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
+</body>
+</html>
